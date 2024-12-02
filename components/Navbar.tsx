@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { auth, signOut, signIn } from '@/../auth';
+import { auth, signOut, signIn } from '../auth';
 import { BadgePlus, LogOut } from 'lucide-react';
 import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
