@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { Author, Startup } from '@/sanity/types';
-import { formatDate } from '@/lib/utils';
+import { cn, formatDate } from '@/lib/utils';
+import { Skeleton } from './ui/skeleton';
 
 // export type StartupCardType = {
 //   _createdAt: Date;
@@ -34,7 +35,7 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
     category,
   } = post;
   return (
-    <li className='startup-card group'>
+    <li className='startup-card'>
       <div className='flex-between'>
         <p className='startup_card_date'>{formatDate(_createdAt)}</p>
         <div className='flex gap-1.5'>
@@ -54,8 +55,8 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
         </div>
         <Link href={`/user/${author?._id}`}>
           <Image
-            src='https://placehold.co/48x48'
-            alt='placeholder'
+            src={author?.image!}
+            alt={author?.name!}
             className='rounded-full'
             width={48}
             height={48}
@@ -77,6 +78,18 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
         </Button>
       </div>
     </li>
+  );
+};
+
+export const StartupCardSkeleton = () => {
+  return (
+    <>
+      {[0, 1, 2, 3, 4].map((index: number) => {
+        <li key={cn('skeleton', index)}>
+          <Skeleton className='startup-card_skeleton' />
+        </li>;
+      })}
+    </>
   );
 };
 
