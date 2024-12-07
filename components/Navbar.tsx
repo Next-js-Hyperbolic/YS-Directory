@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { auth, signOut, signIn } from '../auth';
+import { auth, signOut, signIn } from '@/auth';
 import { BadgePlus, LogOut } from 'lucide-react';
-import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const Navbar = async () => {
   const session = await auth();
@@ -24,6 +23,7 @@ const Navbar = async () => {
               </Link>
 
               <form
+                // @ts-ignore
                 action={async () => {
                   'use server';
 
@@ -36,7 +36,7 @@ const Navbar = async () => {
                 </button>
               </form>
 
-              <Link href={`/user/${session?.user?.id}`}>
+              <Link href={`/user/${session?.id}`}>
                 <Avatar className='size-10'>
                   <AvatarImage
                     src={session?.user?.image || ''}
@@ -48,6 +48,7 @@ const Navbar = async () => {
             </>
           ) : (
             <form
+              // @ts-ignore
               action={async () => {
                 'use server';
 
