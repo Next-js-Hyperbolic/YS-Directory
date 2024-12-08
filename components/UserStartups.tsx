@@ -18,4 +18,5 @@ const UserStartups = async ({ id }: { id: string }) => {
     </>
   );
 };
+
 export default UserStartups;

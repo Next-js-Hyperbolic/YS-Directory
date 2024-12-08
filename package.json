@@ -19,6 +19,7 @@
     "@sanity/vision": "^3.64.3",
     "@sentry/nextjs": "^8.42.0",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/next": "^8.0.7",
     "@uiw/react-md-editor": "^4.0.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -42,13 +43,18 @@
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.2",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "@types/node": "^20",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.2"
   },
   "overrides": {
     "react": "$react",
