@@ -18,6 +18,11 @@ const StartupForm = () => {
   const { toast } = useToast();
   const router = useRouter();
 
+  toast({
+    title: 'Success',
+    description: 'Your startup pitch has been created successfully',
+  });
+
   const handleFormSubmit = async (prevState: any, formData: FormData) => {
     try {
       const formValues = {
